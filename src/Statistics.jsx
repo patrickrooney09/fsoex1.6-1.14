@@ -6,15 +6,19 @@ function Statistics(props) {
   return (
     <div>
       <h1>Stats</h1>
-      <div>
-        <div>Good: {good}</div>
-        <div>Neutral: {neutral}</div>
-        <div>Bad: {bad}</div>
+      {total === 0 ? (
+        <div>No Feedback Given</div>
+      ) : (
+        <div>
+          <div>Good: {good}</div>
+          <div>Neutral: {neutral}</div>
+          <div>Bad: {bad}</div>
 
-        <div>Total:{total}</div>
-        <div>Average:{average}</div>
-        <div>Positive: {positive}%</div>
-      </div>
+          <div>Total:{total}</div>
+          <div>Average:{average}</div>
+          <div>Positive: {positive}%</div>
+        </div>
+      )}
     </div>
   );
 }
