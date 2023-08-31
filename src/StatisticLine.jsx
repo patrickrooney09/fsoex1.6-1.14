@@ -1,17 +1,24 @@
 function StatisticLine(props) {
   const { text, value } = props;
   return (
-    <div>
-      {text === "Positive" ? (
-        <div>
-          {text}: {value}%
-        </div>
-      ) : (
-        <div>
-          {text}: {value}
-        </div>
-      )}
-    </div>
+    <tr>
+      <td>{text}</td>
+      <td>
+        {value}
+        {text === "Positive" ? "%" : ""}
+      </td>
+    </tr>
+    // {text === "Positive" ? (
+    //   <tr>
+    //     <td>{text}</td>
+    //     <td>{value}%</td>
+    //   </tr>
+    // ) : (
+    //   <tr>
+    //     <td>{text}</td>
+    //     <td>{value}</td>
+    //   </tr>
+    // )}
   );
 }
 
