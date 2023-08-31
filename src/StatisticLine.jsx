@@ -8,17 +8,6 @@ function StatisticLine(props) {
         {text === "Positive" ? "%" : ""}
       </td>
     </tr>
-    // {text === "Positive" ? (
-    //   <tr>
-    //     <td>{text}</td>
-    //     <td>{value}%</td>
-    //   </tr>
-    // ) : (
-    //   <tr>
-    //     <td>{text}</td>
-    //     <td>{value}</td>
-    //   </tr>
-    // )}
   );
 }
 
