@@ -26,11 +26,26 @@ const App = () => {
   const [positive, setPositive] = useState(0);
 
   const [selected, setSelected] = useState(0);
+  const [highest, setHighest] = useState(anecdotes[0]);
 
   function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
-  console.log(selected);
+
+  const getHighestVoteCount = (array) => {
+    let highest = 0;
+    let index = 0;
+
+    for (let i = 0; i < array.length; i++) {
+      let number = array[i];
+      if (number > highest) {
+        highest = number;
+        index = i;
+      }
+    }
+    return index;
+  };
+
   return (
     <div>
       <div>{anecdotes[selected]}</div>
@@ -48,10 +63,15 @@ const App = () => {
           let copy = [...votes];
           copy[selected] += 1;
           setVotes(copy);
+
+          setHighest(anecdotes[getHighestVoteCount(copy)]);
         }}
       >
         Vote
       </button>
+      <h1>Anecdote with most Votes</h1>
+      <div>{highest}</div>
+
       <h1>Give Feedback</h1>
       <Button
         text="Good"
